@@ -1,14 +1,12 @@
 import {useState} from 'react';
 
-function FeedbackItem() {
+function FeedbackItem(props) {
 
-    const [rating, setRating] = useState(0);
-    const [text, setText] = useState("Text display div item ");
 
   return (
     <div className="card">
-        <div className="num-display">{rating}</div>
-        <div className="text-display">{text}</div>
+        <div className="num-display">{props.feedback.rating}</div>
+        <div className="text-display">{props.feedback.text}</div>
     </div>
   )
 }
