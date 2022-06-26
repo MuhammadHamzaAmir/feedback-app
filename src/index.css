@@ -185,6 +185,10 @@ input:focus {
     color: rebeccapurple;
 }
 
+.message.reverse {
+    color: rgb(149, 141, 156);
+}
+
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
  * document */
 .about-link {
