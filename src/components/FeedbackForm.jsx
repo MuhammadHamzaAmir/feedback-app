@@ -3,7 +3,7 @@ import {useState} from "react";
 import Button from "./shared/Button";
 import RatingSelect from "./RatingSelect";
 
-function FeedbackForm() {
+function FeedbackForm(props) {
 
     const [text,setText] = useState("");
     const [rating, setRating] = useState(10);
@@ -30,11 +30,28 @@ function FeedbackForm() {
     }
 
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (text.trim().length <10){
+            setBtnDisabled(true)
+            setMessage("Review must be at least 10 characters")
+        }
+        else if (text.trim().length >=10){
+            const newFeedback = {
+                text,rating
+            }
+            setMessage("Review submitted")
+            props.handleAdd(newFeedback);
+            setText("");
+            setBtnDisabled(true);
+        }
+    }
 
 
     return (
         <Card reverse={false}>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h2> Rate our Service!</h2>
                 <RatingSelect select={(rating) => {setRating(rating);} }></RatingSelect>
                 <div className="input-group">
