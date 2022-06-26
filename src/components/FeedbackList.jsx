@@ -1,6 +1,6 @@
 import FeedbackItem from "./FeedbackItem";
 import PropTypes from "prop-types";
-import {AnimatePresence, motion} from "framer-motion";
+// import {AnimatePresence, motion} from "framer-motion";
 
 function FeedbackList(props) {
     if (!props.feedback || props.feedback.length === 0) {
