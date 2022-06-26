@@ -3,6 +3,7 @@ import FeedbackList from "./components/FeedbackList";
 import FeedbackData from "./data/FeedbackData";
 import { useState } from "react";
 import FeedbackStats from "./components/FeedbackStats";
+import FeedbackForm from "./components/FeedbackForm";
 
 
 function App() {
@@ -17,14 +18,14 @@ function App() {
     };
 
     return (
-        <>
-            <Header />
-            <div className="container">
-                <FeedbackStats feedback={feedback}></FeedbackStats>
-                <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
-                
-            </div>
-        </>
+      <>
+        <Header />
+        <div className="container">
+            <FeedbackForm />
+            <FeedbackStats feedback={feedback}></FeedbackStats>
+            <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+        </div>
+      </>
     );
 }
 
