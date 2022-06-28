@@ -6,7 +6,7 @@ import FeedbackContext from "../context/FeedbackContext";
 
 function FeedbackForm() {
 
-    const {addFeedback,feedbackEdit} = useContext(FeedbackContext);
+    const {addFeedback,feedbackEdit,updateFeedback} = useContext(FeedbackContext);
 
     const [text,setText] = useState("");
     const [rating, setRating] = useState(10);
@@ -53,10 +53,18 @@ function FeedbackForm() {
             const newFeedback = {
                 text,rating
             }
-            setMessage("Review submitted")
-            addFeedback(newFeedback);
-            setText("");
-            setBtnDisabled(true);
+            if (feedbackEdit.edit === true){
+                updateFeedback(feedbackEdit.item.id,newFeedback)
+                setMessage("Review Updated");
+                setText("");
+                setBtnDisabled(true);
+            }
+            else{
+                addFeedback(newFeedback);
+                setMessage("Review submitted")
+                setText("");
+                setBtnDisabled(true);
+            }
         }
     }
 
