@@ -2,8 +2,12 @@ import Card from "./shared/Card";
 import {useState} from "react";
 import Button from "./shared/Button";
 import RatingSelect from "./RatingSelect";
+import {useContext} from "react";
+import FeedbackContext from "../context/FeedbackContext";
 
-function FeedbackForm(props) {
+function FeedbackForm() {
+
+    const {addFeedback} = useContext(FeedbackContext);
 
     const [text,setText] = useState("");
     const [rating, setRating] = useState(10);
@@ -42,7 +46,7 @@ function FeedbackForm(props) {
                 text,rating
             }
             setMessage("Review submitted")
-            props.handleAdd(newFeedback);
+            addFeedback(newFeedback);
             setText("");
             setBtnDisabled(true);
         }

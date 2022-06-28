@@ -1,9 +1,12 @@
 import FeedbackItem from "./FeedbackItem";
-import PropTypes from "prop-types";
-// import {AnimatePresence, motion} from "framer-motion";
+import {useContext} from "react";
+import FeedbackContext from "../context/FeedbackContext";
 
-function FeedbackList(props) {
-    if (!props.feedback || props.feedback.length === 0) {
+function FeedbackList() {
+
+    const {feedback} = useContext(FeedbackContext);
+
+    if (!feedback || feedback.length === 0) {
         return <div>No feedback yet</div>
     }
 
@@ -28,22 +31,22 @@ function FeedbackList(props) {
     return (
       <>
       <div className="feedback-list">
-        {props.feedback.map(item => (
-            <FeedbackItem key={item.id} feedback={item} handleDelete={props.handleDelete}/>
+        {feedback.map(item => (
+            <FeedbackItem key={item.id} feedback={item}/>
         ))}
         </div>
       </>
     );
 }
 
-FeedbackList.propTypes = {
-    feedback: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            rating: PropTypes.number.isRequired,
-            text: PropTypes.string.isRequired,
-        }
-        )
-    ).isRequired,
-}
+// FeedbackList.propTypes = {
+//     feedback: PropTypes.arrayOf(
+//         PropTypes.shape({
+//             id: PropTypes.string.isRequired,
+//             rating: PropTypes.number.isRequired,
+//             text: PropTypes.string.isRequired,
+//         }
+//         )
+//     ).isRequired,
+// }
 export default FeedbackList;
