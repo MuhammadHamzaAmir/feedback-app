@@ -8,6 +8,7 @@ import {v4 as uuidv4} from 'uuid';
 import AboutPage from "./pages/AboutPage";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import AboutIconLink from "./components/AboutIconLink";
+import { FeedbackProvider } from "./context/FeedbackContext";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
     };
 
     return (
+        <FeedbackProvider>
       <Router>
         <Header />
         <div className="container">
@@ -50,6 +52,8 @@ function App() {
         <AboutIconLink />
         </div>
       </Router>
+        </FeedbackProvider>
+
     );
 }
 
