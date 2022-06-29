@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^4.1.17",
+    "json-server": "^0.17.0",
     "ms": "^2.1.3",
     "object-keys": "^1.1.1",
     "react": "^18.2.0",

@@ -8,7 +8,7 @@ export const FeedbackProvider = (props) =>{
     const [feedback, setFeedback] = useState([
         {
         id:"1",
-        text:"Item from context",
+        text:"This is the feedback review test item",
         rating:10,
     }]
     );
