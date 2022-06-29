@@ -1,4 +1,3 @@
-// import PropTypes from "prop-types";
 import { useContext } from "react";
 import FeedbackContext from "../context/FeedbackContext";
 
@@ -21,14 +20,5 @@ function FeedbackStats() {
   );
 }
 
-// FeedbackStats.propTypes = {
-//     feedback: PropTypes.arrayOf(
-//         PropTypes.shape({
-//             id: PropTypes.string.isRequired,
-//             rating: PropTypes.number.isRequired,
-//         }
-//         )
-//     ).isRequired,
-// }
 
 export default FeedbackStats;
