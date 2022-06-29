@@ -6,9 +6,9 @@
       "text": "This is the feedback item 1 from backend"
     },
     {
-      "id": 2,
+      "text": "This is the feedback item 2 with rating",
       "rating": 8,
-      "text": "This is the feedback item 2 from backend"
+      "id": 2
     },
     {
       "id": 3,
